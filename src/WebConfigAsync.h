@@ -6,7 +6,7 @@ __________           .___      .__  .__                 _____  .__       .__    
  |____|    \___  >____ |(____  /____/__|___|  /\____/\____|__  /__|___|  /__|  \  \    |____|\____|__  /  /  /
                \/     \/     \/             \/               \/        \/       \__\                 \/  /__/
                                                                                    (c) 2018-2021 alf45star
-                                                                       https://github.com/alf45tar/PedalinoMini
+                                                                       https://github.com/Sthopeless/PedalinoMini
  */
 
 String theme         = "darkly";

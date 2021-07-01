@@ -6,7 +6,7 @@ __________           .___      .__  .__                 _____  .__       .__    
  |____|    \___  >____ |(____  /____/__|___|  /\____/\____|__  /__|___|  /__|  \  \    |____|\____|__  /  /  /
                \/     \/     \/             \/               \/        \/       \__\                 \/  /__/
                                                                                    (c) 2018-2021 alf45star
-                                                                       https://github.com/alf45tar/PedalinoMini
+                                                                       https://github.com/Sthopeless/PedalinoMini
  */
 
 #include <Arduino.h>
@@ -20,11 +20,11 @@ __________           .___      .__  .__                 _____  .__       .__    
 #define INTERFACES        6
 #define PROFILES          3
 #define BANKS            21   // 20 banks + 1 bank for global actions
-#define PEDALS            6   // real number of pedals is board specific (see below)
+#define PEDALS           19   // real number of pedals is board specific (see below)
 #define SEQUENCES        16
 #define STEPS            10   // number of steps for each sequence
 #define LADDER_STEPS      6   // max number of switches in a resistor ladder
-#define LEDS              6   // number of WS2812B leds
+#define LEDS             19   // number of WS2812B leds
 
 #define MAXACTIONNAME    10
 #define MAXBANKNAME      10
@@ -511,10 +511,6 @@ String getChipId() {
 String host(MODEL);
 String ssidSoftAP(MODEL);
 String passwordSoftAP(MODEL);
-
-// String host(getChipId());
-// String ssidSoftAP("Pedalino-" + getChipId());
-// String passwordSoftAP(getChipId());
 
 #include <AsyncTCP.h>
 #define WEBSERVER_H           // to not redefine WebRequestMethod (HTTP_GET, HTTP_POST, ...)

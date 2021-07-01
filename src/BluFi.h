@@ -23,7 +23,8 @@
 
 #include "BluFiSecurity.h"
 
-#define BLUFI_DEVICE_NAME            "BLUFI_PEDALINO"
+// #define BLUFI_DEVICE_NAME            "BLUFI_PEDALINO"
+#define BLUFI_DEVICE_NAME            MODEL
 
 static uint8_t blufi_service_uuid128[32] = {
     /* LSB <--------------------------------------------------------------------------------> MSB */

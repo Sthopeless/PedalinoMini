@@ -1,13 +1,13 @@
 [![](./images/PedalinoMini-Case-1.png)](https://www.youtube.com/watch?v=PgAAQd82aIo)
 
-# PedalinoMini™
+# SthopePedal
 
-![PlatformIO CI](https://github.com/alf45tar/PedalinoMini/workflows/PlatformIO%20CI/badge.svg)
+![PlatformIO CI](https://github.com/Sthopeless/PedalinoMini/workflows/PlatformIO%20CI/badge.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/14609917402d4d498a78faa014539473)](https://www.codacy.com/manual/alf45tar/PedalinoMini?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alf45tar/PedalinoMini&amp;utm_campaign=Badge_Grade)
 
 Wireless MIDI foot controller for guitarists and more.
 
-You can change the presets of your guitar rig, turn old MIDI equipment into something that’s USB-compatible, give you hands-free or foot-occupied ways to control your rig during a live performance, and it can be done with WiFi or Bluetooth. This is a full-featured MIDI controller, with three user profiles, and it can control a maximum of 36 foot switches. That’s an impressive amount of kit for such a small device; usually you’d have to spend hundreds or even thousands of dollars for a simple MIDI controller, and the PedalinoMini does everything with very cheap hardware.
+You can change the presets of your guitar rig, turn old MIDI equipment into something that’s USB-compatible, give you hands-free or foot-occupied ways to control your rig during a live performance, and it can be done with WiFi or Bluetooth. This is a full-featured MIDI controller, with three user profiles, and it can control a maximum of 36 foot switches. That’s an impressive amount of kit for such a small device; usually you’d have to spend hundreds or even thousands of dollars for a simple MIDI controller, and the Pedal does everything with very cheap hardware.
 
 - Plug-and-play with any MIDI-compatible app on iOS 8 and above as well as OS X Yosemite and above.
 - High customizable using web interface
@@ -91,7 +91,7 @@ Sponsors version additions/fixes since May 12th, 2021:
 - Enable/disable incoming and outcoming MIDI messages display
 - Universal expression pedal
 
-[PedalinoMini™ Case 1](https://github.com/alf45tar/PedalinoMini-Case-1) is available to sponsors only.
+[SthopePedal Case 1](https://github.com/Sthopeless/PedalinoMini-Case-1) is available to sponsors only.
 
 ## Bill of materials
 
@@ -121,7 +121,7 @@ Do not forget the add the pull-up resistors on PIN_A1 to PIN_A6 otherwise pins w
 
 ## How to build and upload
 
-[PlatformIO](https://platformio.org) is the recommended IDE for PedalinoMini™ build and upload.
+[PlatformIO](https://platformio.org) is the recommended IDE for SthopePedal build and upload.
 
 1. Install [PlatformIO IDE for VSCode](https://platformio.org/install/ide?install=vscode)
 2. Install Git
@@ -130,7 +130,7 @@ Do not forget the add the pull-up resistors on PIN_A1 to PIN_A6 otherwise pins w
 3. In VSCode run the following commands:
     - from View->Command Palette (Ctrl+Shift+P)
         - Git: Clone
-        - You will be asked for the URL of the remote repository (<https://github.com/alf45tar/PedalinoMini>) and the parent directory under which to put the local repository.
+        - You will be asked for the URL of the remote repository (<https://github.com/Sthopeless/PedalinoMini>) and the parent directory under which to put the local repository.
     - under PlatformIO Project Tasks select your environment (i.e. env:esp32doit-devkit-v1)
         - Click "Build" under General
         - Click "Upload" under General
@@ -152,16 +152,16 @@ IMPORTANT: ESP32 board and Arduino Pro Micro must share GND.
 
 ## Booting modes
 
-PedalinoMini™ has 8 booting modes:
+SthopePedal has 8 booting modes:
 
 Mode|Name|Description
 ----|----|-----------
-1|Normal|BLE and WiFi are enabled. PedalinoMini™ starts the WiFi procedure on boot (connect to last AP -> SmartConfig -> WPS -> Access Point).<br>After boot PedalinoMini™ will wait for BLE-MIDI connection.
-2|Bluetooth Only|WiFi are Web UI are disabled.<br> PedalinoMini™ will wait for BLE-MIDI connection only.
-3|WiFi Only|PedalinoMini™ starts the WiFi procedure on boot (connect to last AP -> SmartConfig -> WPS -> Access Point).<br>BLE is disabled.
-4|Access Point with Bluetooth|PedalinoMini™ skip the WiFi procedure on boot and create a WiFi Access Point.<br>PedalinoMini™ will wait for BLE-MIDI connection too.
-5|Access Point without Bluetooth|PedalinoMini™ skips the WiFi procedure on boot and create a WiFi Access Point.<br>BLE is disabled.
-6|Reset WiFi credentials|Forget the last connected access point.<br>On next boot PedalinoMini™ can be connected to a new AP.
+1|Normal|BLE and WiFi are enabled. SthopePedal starts the WiFi procedure on boot (connect to last AP -> SmartConfig -> WPS -> Access Point).<br>After boot SthopePedal will wait for BLE-MIDI connection.
+2|Bluetooth Only|WiFi are Web UI are disabled.<br> SthopePedal will wait for BLE-MIDI connection only.
+3|WiFi Only|SthopePedal starts the WiFi procedure on boot (connect to last AP -> SmartConfig -> WPS -> Access Point).<br>BLE is disabled.
+4|Access Point with Bluetooth|SthopePedal skip the WiFi procedure on boot and create a WiFi Access Point.<br>SthopePedal will wait for BLE-MIDI connection too.
+5|Access Point without Bluetooth|SthopePedal skips the WiFi procedure on boot and create a WiFi Access Point.<br>BLE is disabled.
+6|Reset WiFi credentials|Forget the last connected access point.<br>On next boot SthopePedal can be connected to a new AP.
 7|Ladder Config|Learn mode for your ladder pedal. Any resistors ladder (up to 6 buttons) can be calibrated just pressing footswitches in any sequence. During calibration press and hold the footswitch until the timeout expires (the upper bar reaches zero) and the measure is acquired with a value in the botton bar. After calibration footswitches are numbered depending of the corresponding analog value: lower value lower number. TC HELICON Switch-6 footswitch 1 correspond to button 6, footswitch 2 to button 5, and so on until footswitch 6 to button 1.<br>Configure at least one pedal as Ladder before to proceed with configuration.
 8|Reset to factory default|
 
@@ -172,7 +172,7 @@ The default boot mode is (1) Normal.
 To select a different mode:
 
 - Press and release EN button (POWER button on TTGO T-Eight) and immediately after press and hold BOOT button (CENTER button on TTGO T-Eight)
-- Follow the istructions on display. Keep it pressed until the progress bar reach the end to reset to factory default. If you release the button before the progress bar reach the end PedalinoMini™ will start in one of the supported boot mode.
+- Follow the istructions on display. Keep it pressed until the progress bar reach the end to reset to factory default. If you release the button before the progress bar reach the end SthopePedal will start in one of the supported boot mode.
 
 Mode|Name|USB-MIDI|Legacy MIDI|RTP-MIDI|ipMIDI|BLE MIDI|OSC|Web UI|OTA Firmware Update|HTTP Firmware Update
 :--:|----|:------:|:---------:|:------:|:----:|:------:|:-:|:----:|:-----------------:|:------------------:
@@ -186,25 +186,25 @@ Mode|Name|USB-MIDI|Legacy MIDI|RTP-MIDI|ipMIDI|BLE MIDI|OSC|Web UI|OTA Firmware 
   (-) Not supported
 - USB-MIDI and DIN-MIDI are always available if hardware implemented.
 
-## How to connect PedalinoMini™ to a WiFi network
+## How to connect SthopePedal to a WiFi network
 
-PedalinoMini™ supports IEEE 802.11 b/g/n WiFi with WPA/WPA2 authentication (only 2.4 GHz).
+SthopePedal supports IEEE 802.11 b/g/n WiFi with WPA/WPA2 authentication (only 2.4 GHz).
 
-PedalinoMini™ implements Wi-Fi Protected Setup (WPS) and Smart Config technology ([Espressif’s ESP-TOUCH protocol](https://www.espressif.com/en/products/software/esp-touch/overview)). WPS needs access to the WPS button on the WiFi router. Smart Config requires a smartphone with one the following apps:
+SthopePedal implements Wi-Fi Protected Setup (WPS) and Smart Config technology ([Espressif’s ESP-TOUCH protocol](https://www.espressif.com/en/products/software/esp-touch/overview)). WPS needs access to the WPS button on the WiFi router. Smart Config requires a smartphone with one the following apps:
 
 - [ESP8266 SmartConfig](https://play.google.com/store/apps/details?id=com.cmmakerclub.iot.esptouch) for Android
 - [Espressif Esptouch](https://itunes.apple.com/us/app/espressif-esptouch/id1071176700?mt=8) for iOS
 
-If the WiFi network is not available PedalinoMini™ will create an hotspot for you. Once connected to the PedalinoMini™ hotspot, you can use the web interface to set the SSID and password of an access point that you would like to connect to.
+If the WiFi network is not available SthopePedal will create an hotspot for you. Once connected to the SthopePedal hotspot, you can use the web interface to set the SSID and password of an access point that you would like to connect to.
 
-- On power on PedalinoMini™ will try to connect to the last know access point
+- On power on SthopePedal will try to connect to the last know access point
 - If it cannot connect to the last used access point within 15 seconds it enters into Smart Config mode
 - Start one of the suggested apps to configure SSID and password
 - If it doesn't receive any SSID and password during the next 15 seconds it enters into WPS mode
-- Press or press and hold (it depends by your router) the WPS button on your WiFi router __after__ PedalinoMini™ entered in WPS mode
+- Press or press and hold (it depends by your router) the WPS button on your WiFi router __after__ SthopePedal entered in WPS mode
 - If it doesn't receive any SSID and password during the next 30 seconds it switch to AP mode
-- In AP mode PedalinoMini™ create a WiFi network called 'Pedalino-XXXXXXXX' waiting connection from clients. The required password is XXXXXXXX (uppercase). XXXXXXXX is a variable string.
-- Reboot PedalinoMini™ to restart the procedure.
+- In AP mode SthopePedal create a WiFi network called 'Pedalino-XXXXXXXX' waiting connection from clients. The required password is XXXXXXXX (uppercase). XXXXXXXX is a variable string.
+- Reboot SthopePedal to restart the procedure.
 
 ```C++
 void wifi_connect()
@@ -221,7 +221,7 @@ void wifi_connect()
 
 ## How to connect to the web user intertace
 
-The responsive and mobile-first configuration web user interface is available on `http://device-name.local` address (the address is case insensitive). The device identification name is unique per device. Every device/board has a different device name. For example I am using `http://2ab267ac.local` to connect to my PedalinoMini™.
+The responsive and mobile-first configuration web user interface is available on `http://device-name.local` address (the address is case insensitive). The device identification name is unique per device. Every device/board has a different device name. For example I am using `http://2ab267ac.local` to connect to my SthopePedal.
 
 In order to know your device name and/or the IP address press for at least half a second the BOOT button and check the display.
 
@@ -233,7 +233,7 @@ Device name, username and password can be changed via web user interface in the 
 
 ## Pedals
 
-Once PedalinoMini™ is connected to a WiFI network and you are connected to the web user interface it is time to configure which pedal/controller is connected to each of the 6 available ports. Pedal 7 and 8 (if present) are the on board buttons and they are fully configurable.
+Once SthopePedal is connected to a WiFI network and you are connected to the web user interface it is time to configure which pedal/controller is connected to each of the 6 available ports. Pedal 7 and 8 (if present) are the on board buttons and they are fully configurable.
 
 ![WEBUI PEDALS](./images/webui-pedals.png "Pedals")
 
@@ -247,7 +247,7 @@ Analog Response|Mapping between analog pedal movement and response. Accepted val
 Min|It depends of pedal mode and/or pedal function (see below).
 Max|It depends of pedal mode and/or pedal function (see below).
 Invert Polarity|Normally open (NO) and normally closed (NC) momentary switches are supported and configurable by software if the foot switch do not have a polarity switch. On analog pedal it invert the range.
-Analog Calibration|Enable analog pedal continuous calibration. Min and Max values are managed by PedalinoMini™. After each power on cycle move the expression pedals to its full range and PedalinoMini™ will calibrate it. During the first full movement of the pedal MIDI events could be not precise because PedalinoMini™ is still learning the full range of the pedal.
+Analog Calibration|Enable analog pedal continuous calibration. Min and Max values are managed by SthopePedal. After each power on cycle move the expression pedals to its full range and SthopePedal will calibrate it. During the first full movement of the pedal MIDI events could be not precise because SthopePedal is still learning the full range of the pedal.
 
 
 Mode|Function|Min|Max
@@ -342,7 +342,7 @@ Routing between different interfaces is enabled between every IN enabled interfa
 
 ## Options
 
-PedalinoMini™ has a lot of options well documented in the Options page.
+SthopePedal has a lot of options well documented in the Options page.
 
 ![WEBUI OPTIONS 1](./images/webui-options1.png "Options 1")
 
@@ -350,7 +350,7 @@ PedalinoMini™ has a lot of options well documented in the Options page.
 
 ## Configurations
 
-The complete profile setup can be saved as configuration to be used later or just for backup reason in case of hardware failure. Configuration files can be downloaded and shared with others PedalinoMini™ users.
+The complete profile setup can be saved as configuration to be used later or just for backup reason in case of hardware failure. Configuration files can be downloaded and shared with others SthopePedal users.
 A complete configuration file editor is provided for advanced operations.
 
 ![WEBUI CONFIGURATIONS](./images/webui-configurations.png "Configurations")
@@ -359,18 +359,18 @@ Some example configurations are provides. More to come.
 
 ### iRig BlueBoard
 
-PedalinoMini™ can emulate an [IK Multimedia iRig Blueboard](https://www.ikmultimedia.com/products/irigblueboard/) using 'blueboard' configuration. Midi Mode 1 is on bank 1 and Midi Mode 2 is on bank 2. PedalinoMini™ emulation works on any MIDI interface and not only "MIDI over Bluetooth" as the original iRig Blueboard.
+SthopePedal can emulate an [IK Multimedia iRig Blueboard](https://www.ikmultimedia.com/products/irigblueboard/) using 'blueboard' configuration. Midi Mode 1 is on bank 1 and Midi Mode 2 is on bank 2. SthopePedal emulation works on any MIDI interface and not only "MIDI over Bluetooth" as the original iRig Blueboard.
 
 ### Fender Mustang Amplifier
 
-PedalinoMini™ can control a Fender Mustang I/II/III/IV Amplifier via MIDI. Additional [software](https://github.com/alf45tar/mustang-midi-bridge-win) is required to translate MIDI messages to the proprietary USB protocol used by Fender Mustang amplifiers. The bonus configuration is called 'mustang2' and works with 3 momentary switches and 3 jog wheels.
+SthopePedal can control a Fender Mustang I/II/III/IV Amplifier via MIDI. Additional [software](https://github.com/alf45tar/mustang-midi-bridge-win) is required to translate MIDI messages to the proprietary USB protocol used by Fender Mustang amplifiers. The bonus configuration is called 'mustang2' and works with 3 momentary switches and 3 jog wheels.
 
 ## Display mode
 
 Where|What|Display|Description
 :---:|:--:|-------|:----------
 Bank Name|Empty|![](./images/oled-display1.gif)|If the current bank name is empty the current profile and the current bank is shown using a vintage 7 segment LED style. First digit is the profile, the others two are for bank.
-Bank Name|Any|![](./images/oled-display2.gif)|If current bank name is not empty the bank name is displayed within the 6 pedal names. PedalinoMini™ assumes the first action tag for the pedal as its pedal name. The bank name screen will switch every 4 seconds to display pedals current value if no event occurs.
+Bank Name|Any|![](./images/oled-display2.gif)|If current bank name is not empty the bank name is displayed within the 6 pedal names. SthopePedal assumes the first action tag for the pedal as its pedal name. The bank name screen will switch every 4 seconds to display pedals current value if no event occurs.
 Bank Name|:|![](./images/oled-display3.gif)|If the bank name start with colon (:) the bank name is always shown (if no event occurs).
 Bank Name|.|![](./images/oled-display4.gif)|If bank name start with point (.) the current values are shown and events update values in real time without any display switch.
 Bank Name|##||A double hashtag sign (##) in bank name is replaced with the bank number.

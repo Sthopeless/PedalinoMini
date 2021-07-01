@@ -6,11 +6,11 @@ __________           .___      .__  .__                 _____  .__       .__    
  |____|    \___  >____ |(____  /____/__|___|  /\____/\____|__  /__|___|  /__|  \  \    |____|\____|__  /  /  /
                \/     \/     \/             \/               \/        \/       \__\                 \/  /__/
                                                                                    (c) 2018-2021 alf45star
-                                                                       https://github.com/alf45tar/PedalinoMini
+                                                                       https://github.com/Sthopeless/PedalinoMini
  */
 
 /*
-    ESP32 PedalinoMini™ Mini
+    ESP32 SthopePedal Mini
 
       - Serial MIDI
       - WiFi AppleMIDI a.k.a. RTP-MIDI a.k.a. Network MIDI
@@ -249,7 +249,7 @@ void setup()
   DPRINTLN("|____|    \\___  >____ |(____  /____/__|___|  /\\____/\\____|__  /__|___|  /__|  \\  \\    |____|\\____|__  /  /  / ");
   DPRINTLN("              \\/     \\/     \\/             \\/               \\/        \\/       \\__\\                 \\/  /__/ ");
   DPRINTLN("                                                                                  (c) 2018-2020 alf45star      ");
-  DPRINTLN("                                                                      https://github.com/alf45tar/PedalinoMini");
+  DPRINTLN("                                                                      https://github.com/Sthopeless/PedalinoMini");
   DPRINT("\nHostname: %s\n", host.c_str());
   DPRINT("PSRAM%sfound\n", psramFound() ? " " : " not ");
 

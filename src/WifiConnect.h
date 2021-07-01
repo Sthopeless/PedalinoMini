@@ -6,7 +6,7 @@ __________           .___      .__  .__                 _____  .__       .__    
  |____|    \___  >____ |(____  /____/__|___|  /\____/\____|__  /__|___|  /__|  \  \    |____|\____|__  /  /  /
                \/     \/     \/             \/               \/        \/       \__\                 \/  /__/
                                                                                    (c) 2018-2019 alf45star
-                                                                       https://github.com/alf45tar/PedalinoMini
+                                                                       https://github.com/Sthopeless/PedalinoMini
  */
 
 
@@ -454,8 +454,8 @@ bool wps_config()
   WPS.wps_type = WPS_TYPE_PBC;
   strcpy(WPS.factory_info.manufacturer, "ESPRESSIF");
   strcpy(WPS.factory_info.model_number, "ESP32");
-  strcpy(WPS.factory_info.model_name,   "Pedalino(TM)");
-  strcpy(WPS.factory_info.device_name,  "PedalinoMini");
+  strcpy(WPS.factory_info.model_name,   MODEL);
+  strcpy(WPS.factory_info.device_name,  MODEL);
 
   ESP_ERROR_CHECK(esp_wifi_wps_enable(&WPS));
   ESP_ERROR_CHECK(esp_wifi_wps_start(0));

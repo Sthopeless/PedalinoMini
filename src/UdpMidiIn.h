@@ -6,7 +6,7 @@ __________           .___      .__  .__                 _____  .__       .__    
  |____|    \___  >____ |(____  /____/__|___|  /\____/\____|__  /__|___|  /__|  \  \    |____|\____|__  /  /  /
                \/     \/     \/             \/               \/        \/       \__\                 \/  /__/
                                                                                    (c) 2018-2021 alf45star
-                                                                       https://github.com/alf45tar/PedalinoMini
+                                                                       https://github.com/Sthopeless/PedalinoMini
  */
 
 #ifdef WIFI
@@ -1253,9 +1253,9 @@ void oscOnPacket(AsyncUDPPacket packet) {
     oscMsg.dispatch("/midi_thru",                   OnOscMidiThru);
     oscMsg.dispatch("/midi_clock",                  OnOscMidiClock);
 
-    oscMsg.dispatch("/pedalino/midi/noteOn",        OnOscNoteOn);
-    oscMsg.dispatch("/pedalino/midi/noteOff",       OnOscNoteOff);
-    oscMsg.dispatch("/pedalino/midi/controlChange", OnOscControlChange);
+    oscMsg.dispatch("/sthopepedal/midi/noteOn",        OnOscNoteOn);
+    oscMsg.dispatch("/sthopepedal/midi/noteOff",       OnOscNoteOff);
+    oscMsg.dispatch("/sthopepedal/midi/controlChange", OnOscControlChange);
   } else {
     DPRINTLN("OSC error: %d", oscMsg.getError());
   }

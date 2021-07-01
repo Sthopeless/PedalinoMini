@@ -6,7 +6,7 @@ __________           .___      .__  .__                 _____  .__       .__    
  |____|    \___  >____ |(____  /____/__|___|  /\____/\____|__  /__|___|  /__|  \  \    |____|\____|__  /  /  /
                \/     \/     \/             \/               \/        \/       \__\                 \/  /__/
                                                                                    (c) 2018-2020 alf45star
-                                                                       https://github.com/alf45tar/PedalinoMini
+                                                                       https://github.com/Sthopeless/PedalinoMini
  */
 
 #ifdef WIFI
@@ -367,7 +367,7 @@ void OSCSendNoteOn(byte note, byte velocity, byte channel)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/note/";
+  String msg = "/sthopepedal/midi/note/";
   msg += note;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((float)(velocity / 127.0)).add((int32_t)channel).send(udpMsg).empty();
@@ -379,7 +379,7 @@ void OSCSendNoteOff(byte note, byte velocity, byte channel)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/note/";
+  String msg = "/sthopepedal/midi/note/";
   msg += note;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((float)0).add((int32_t)channel).send(udpMsg).empty();
@@ -391,7 +391,7 @@ void OSCSendAfterTouchPoly(byte note, byte pressure, byte channel)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/aftertouchpoly/";
+  String msg = "/sthopepedal/midi/aftertouchpoly/";
   msg += note;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((float)(pressure / 127.0)).add((int32_t)channel).send(udpMsg).empty();
@@ -403,7 +403,7 @@ void OSCSendControlChange(byte number, byte value, byte channel)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/cc/";
+  String msg = "/sthopepedal/midi/cc/";
   msg += number;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((float)(value / 127.0)).add((int32_t)channel).send(udpMsg).empty();
@@ -415,7 +415,7 @@ void OSCSendProgramChange(byte number, byte channel)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/pc/";
+  String msg = "/sthopepedal/midi/pc/";
   msg += number;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((int32_t)channel).send(udpMsg).empty();
@@ -427,7 +427,7 @@ void OSCSendAfterTouch(byte pressure, byte channel)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/aftertouchchannel/";
+  String msg = "/sthopepedal/midi/aftertouchchannel/";
   msg += channel;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((float)(pressure / 127.0)).add((int32_t)channel).send(udpMsg).empty();
@@ -439,7 +439,7 @@ void OSCSendPitchBend(int bend, byte channel)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/pitchbend/";
+  String msg = "/sthopepedal/midi/pitchbend/";
   msg += channel;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((float)((bend + 8192) / 16383.0)).add((int32_t)channel).send(udpMsg).empty();
@@ -459,7 +459,7 @@ void OSCSendSongPosition(unsigned int beats)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/songpostion/";
+  String msg = "/sthopepedal/midi/songpostion/";
   msg += beats;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((int32_t)beats).send(udpMsg).empty();
@@ -471,7 +471,7 @@ void OSCSendSongSelect(byte songnumber)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  String msg = "/pedalino/midi/songselect/";
+  String msg = "/sthopepedal/midi/songselect/";
   msg += songnumber;
   OSCMessage oscMsg(msg.c_str());
   oscMsg.add((int32_t)songnumber).send(udpMsg).empty();
@@ -483,7 +483,7 @@ void OSCSendTuneRequest(void)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  OSCMessage oscMsg("/pedalino/midi/tunerequest/");
+  OSCMessage oscMsg("/sthopepedal/midi/tunerequest/");
   oscMsg.send(udpMsg).empty();
   oscUDPout.send(udpMsg);
 }
@@ -497,7 +497,7 @@ void OSCSendStart(void)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  OSCMessage oscMsg("/pedalino/midi/start/");
+  OSCMessage oscMsg("/sthopepedal/midi/start/");
   oscMsg.send(udpMsg).empty();
   oscUDPout.send(udpMsg);
 }
@@ -507,7 +507,7 @@ void OSCSendContinue(void)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  OSCMessage oscMsg("/pedalino/midi/continue/");
+  OSCMessage oscMsg("/sthopepedal/midi/continue/");
   oscMsg.send(udpMsg).empty();
   oscUDPout.send(udpMsg);
 }
@@ -517,7 +517,7 @@ void OSCSendStop(void)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  OSCMessage oscMsg("/pedalino/midi/stop/");
+  OSCMessage oscMsg("/sthopepedal/midi/stop/");
   oscMsg.send(udpMsg).empty();
   oscUDPout.send(udpMsg);
 }
@@ -527,7 +527,7 @@ void OSCSendActiveSensing(void)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  OSCMessage oscMsg("/pedalino/midi/activesensing/");
+  OSCMessage oscMsg("/sthopepedal/midi/activesensing/");
   oscMsg.send(udpMsg).empty();
   oscUDPout.send(udpMsg);
 }
@@ -537,7 +537,7 @@ void OSCSendSystemReset(void)
   if (!wifiEnabled || !interfaces[PED_OSC].midiOut) return;
 
   AsyncUDPMessage udpMsg;
-  OSCMessage oscMsg("/pedalino/midi/reset/");
+  OSCMessage oscMsg("/sthopepedal/midi/reset/");
   oscMsg.send(udpMsg).empty();
   oscUDPout.send(udpMsg);
 }

@@ -6,7 +6,7 @@ __________           .___      .__  .__                 _____  .__       .__    
  |____|    \___  >____ |(____  /____/__|___|  /\____/\____|__  /__|___|  /__|  \  \    |____|\____|__  /  /  /
                \/     \/     \/             \/               \/        \/       \__\                 \/  /__/
                                                                                    (c) 2018-2021 alf45star
-                                                                       https://github.com/alf45tar/PedalinoMini
+                                                                       https://github.com/Sthopeless/PedalinoMini
  */
 
 #include "Fonts.h"
@@ -867,7 +867,7 @@ void drawFrame1(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int1
       display->drawString(64 + x, 32 + y, MODEL);
       display->setFont(ArialMT_Plain_10);
       display->setTextAlignment(TEXT_ALIGN_LEFT);
-      display->drawString(110 + x, 16 + y, String("TM"));
+      // display->drawString(110 + x, 16 + y, String("TM"));
       ui.enableAutoTransition();
     }
     else {
