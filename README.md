@@ -3,7 +3,7 @@
 # PedalinoMini™
 
 ![PlatformIO CI](https://github.com/alf45tar/PedalinoMini/workflows/PlatformIO%20CI/badge.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/14609917402d4d498a78faa014539473)](https://www.codacy.com/manual/alf45tar/PedalinoMini?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alf45tar/PedalinoMini&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/14609917402d4d498a78faa014539473)](https://www.codacy.com/manual/Sthopeless/PedalinoMini?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sthopeless/PedalinoMini&amp;utm_campaign=Badge_Grade)
 
 Wireless MIDI foot controller for guitarists and more.
 
