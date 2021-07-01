@@ -16,7 +16,7 @@ __________           .___      .__  .__                 _____  .__       .__    
 
 #define VERSION         "2.2.2"
 
-#define MODEL           "PedalinoMini™"
+#define MODEL           "SthopePedal"
 #define INTERFACES        6
 #define PROFILES          3
 #define BANKS            21   // 20 banks + 1 bank for global actions
@@ -508,9 +508,13 @@ String getChipId() {
   return String(chipId);
 }
 
-String host(getChipId());
-String ssidSoftAP("Pedalino-" + getChipId());
-String passwordSoftAP(getChipId());
+String host(MODEL);
+String ssidSoftAP(MODEL);
+String passwordSoftAP(MODEL);
+
+// String host(getChipId());
+// String ssidSoftAP("Pedalino-" + getChipId());
+// String passwordSoftAP(getChipId());
 
 #include <AsyncTCP.h>
 #define WEBSERVER_H           // to not redefine WebRequestMethod (HTTP_GET, HTTP_POST, ...)

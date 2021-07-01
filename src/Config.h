@@ -557,15 +557,15 @@ void spiffs_load_config(String filename, bool loadActions = true, bool loadPedal
 //
 void load_factory_default()
 {
-  host               = getChipId();
+  host               = MODEL;
   bootMode           = PED_BOOT_NORMAL;
   wifiSSID           = "";
   wifiPassword       = "";
-  ssidSoftAP         = String("Pedalino-") + getChipId();
-  passwordSoftAP     = getChipId();
-  httpUsername       = "admin";
-  httpPassword       = getChipId();
-  theme              = "bootstrap";
+  ssidSoftAP         = MODEL;
+  passwordSoftAP     = MODEL;
+  httpUsername       = "";
+  httpPassword       = "";
+  theme              = "darkly";
   currentBank        = 1;
   currentProfile     = 0;
   pressTime          = PED_PRESS_TIME;
@@ -711,7 +711,7 @@ void load_factory_default()
   ladderLevels[6] = ADC_RESOLUTION - 1;
 }
 
-void eeprom_update_device_name(String name = getChipId())
+void eeprom_update_device_name(String name = host)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);
@@ -743,7 +743,7 @@ void eeprom_update_sta_wifi_credentials(String ssid = wifiSSID, String pass = wi
   DPRINT("[NVS][Global][STA Password]: %s\n", pass.c_str());
 }
 
-void eeprom_update_ap_wifi_credentials(String ssid = String("Pedalino-") + getChipId(), String pass = getChipId())
+void eeprom_update_ap_wifi_credentials(String ssid = ssidSoftAP, String pass = passwordSoftAP)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);
@@ -755,7 +755,7 @@ void eeprom_update_ap_wifi_credentials(String ssid = String("Pedalino-") + getCh
   DPRINT("[NVS][Global][AP Password]: %s\n", pass.c_str());
 }
 
-void eeprom_update_login_credentials(String username = "admin", String password = getChipId())
+void eeprom_update_login_credentials(String username = httpUsername, String password = httpPassword)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);
@@ -767,7 +767,7 @@ void eeprom_update_login_credentials(String username = "admin", String password 
   DPRINT("[NVS][Global][HTTP Password]: %s\n", password.c_str());
 }
 
-void eeprom_update_current_profile(byte profile = 0)
+void eeprom_update_current_profile(byte profile = currentProfile)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);
@@ -777,7 +777,7 @@ void eeprom_update_current_profile(byte profile = 0)
   DPRINT("[NVS][Global][Current Profile]: %d\n", profile);
 }
 
-void eeprom_update_tap_dance(bool enable = false)
+void eeprom_update_tap_dance(bool enable = tapDanceMode)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);
@@ -787,7 +787,7 @@ void eeprom_update_tap_dance(bool enable = false)
   DPRINT("[NVS][Global[Tap Dance Mode]: %d\n", enable);
 }
 
-void eeprom_update_repeat_on_bank_switch(bool enable = false)
+void eeprom_update_repeat_on_bank_switch(bool enable = repeatOnBankSwitch)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);
@@ -816,7 +816,7 @@ void eeprom_update_press_time(long p1 = PED_PRESS_TIME,
   DPRINT("[NVS][Global[Repeat Time]: %ld\n", p4);
 }
 
-void eeprom_update_theme(String theme = "bootstrap")
+void eeprom_update_theme(String theme = theme)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);
@@ -839,7 +839,7 @@ void eeprom_update_ladder()
   }
 }
 
-void eeprom_update_encoder_sensitivity(byte sensitivity = 5)
+void eeprom_update_encoder_sensitivity(byte sensitivity = encoderSensitivity)
 {
   DPRINT("Updating NVS ... ");
   preferences.begin("Global", false);

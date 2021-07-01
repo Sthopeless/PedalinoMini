@@ -9,9 +9,9 @@ __________           .___      .__  .__                 _____  .__       .__    
                                                                        https://github.com/alf45tar/PedalinoMini
  */
 
-String theme         = "bootstrap";
-String httpUsername  = "admin";
-String httpPassword  = getChipId();
+String theme         = "darkly";
+String httpUsername  = MODEL;
+String httpPassword  = MODEL;
 bool   authenticated = false;
 
 #ifdef NOWIFI
@@ -79,7 +79,7 @@ void get_top_page(int p = 0) {
   page += F("<!doctype html>");
   page += F("<html lang='en'>");
   page += F("<head>");
-  page += F("<title>PedalinoMini&trade;</title>");
+  page += F("<title>Pedal</title>");
   page += F("<meta charset='utf-8'>");
   page += F(" <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>");
   if ( theme == "bootstrap" ) {
@@ -104,7 +104,7 @@ void get_top_page(int p = 0) {
   page += F("<nav class='navbar navbar-expand-md navbar-light bg-light mb-3'>");
   page += F("<div class='container-fluid'>");
   page += F("<a class='navbar-brand' href='/'>");
-  page += F("<img src='/logo.png' width='30' height='30' class='d-inline-block align-top' alt=''></a>");
+  page += F("<img src='/logo.png' width='40' height='40' class='d-inline-block align-top' alt=''></a>");
   page += F("<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>");
   page += F("<span class='navbar-toggler-icon'></span>");
   page += F("</button>");
@@ -189,7 +189,7 @@ void get_top_page(int p = 0) {
 
 /*
   page += F("<div class='d-flex flex-column bg-light' style='width: 4.5rem;'>");
-  page += F("<a href='/' id='bootstrap' class='d-block p-3 link-dark text-decoration-none' title='PedalinoMini' data-bs-toggle='tooltip' data-bs-placement='right'>");
+  page += F("<a href='/' id='bootstrap' class='d-block p-3 link-dark text-decoration-none' title='Pedal' data-bs-toggle='tooltip' data-bs-placement='right'>");
   page += F("<img src='/logo.png' width='32' height='32'>");
   page += F("<span class='visually-hidden'>Icon-only</span>");
   page += F("</a>");
@@ -314,8 +314,8 @@ void get_login_page() {
   page += F("<form class='form-signin'>");
   page += F("<div class='text-center mb-4'>");
   page += F("<img class='mb-4' src='/logo.png' alt='' width='64' height='64'>");
-  page += F("<h1 class='h3 mb-3 font-weight-normal'>PedalinoMini&trade;</h1>");
-  page += F("<p>Wireless MIDI foot controller <a href='https://github.com/alf45tar/PedalinoMini'>More info</a></p>");
+  page += F("<h1 class='h3 mb-3 font-weight-normal'>Pedal</h1>");
+  page += F("<p>Wireless MIDI foot controller <a href='https://github.com/sthopeless/PedalinoMini'>More info</a></p>");
   page += F("</div>");
 
   page += F("<div class='form-label-group'>");
@@ -636,12 +636,12 @@ void get_live_page(unsigned int start, unsigned int len) {
             "con = new WebSocket('ws://' + location.hostname + ':80/ws');"
             "con.binaryType = 'arraybuffer';"
             "con.onopen = function () {"
-            "console.log('WebSocket to Pedalino open');"
+            "console.log('WebSocket to Pedal open');"
             "$('#live').find('input, button, submit, textarea, select').removeAttr('disabled');"
             "$('#live').find('a').removeClass('disablehyper').unbind('click');"
             "};"
             "con.onerror = function (error) {"
-            "console.log('WebSocket to Pedalino error ', error);"
+            "console.log('WebSocket to Pedal error ', error);"
             "};"
             "con.onmessage = function (e) {"
             "var data = e.data;"
@@ -657,7 +657,7 @@ void get_live_page(unsigned int start, unsigned int len) {
             "    } else {(invert == 0) ? context.fillRect(x*zoom,y*zoom,zoom,zoom) : context.clearRect(x*zoom,y*zoom,zoom,zoom);}"
             "};"
             "con.onclose = function () {"
-            "console.log('WebSocket to Pedalino closed');"
+            "console.log('WebSocket to Pedal closed');"
             "$('#live').find('input, button, submit, textarea, select').attr('disabled', 'disabled');"
             "$('#live').find('a').addClass('disablehyper').click(function (e) { e.preventDefault(); });"
             "};"
@@ -1859,7 +1859,7 @@ void get_options_page(unsigned int start, unsigned int len) {
   page += F("</div>");
   page += F("<small id='devicenameHelpBlock' class='form-text text-muted'>");
   page += F("Each device must have a different name. Enter the device name without .local. Web UI will be available at http://<i>device_name</i>.local<br>");
-  page += F("Pedalino will be restarted if you change it.");
+  page += F("Pedal will be restarted if you change it.");
   page += F("</small>");
   page += F("<div class='row'>");
   page += F("<div class='col-auto me-auto'>");
@@ -1960,7 +1960,7 @@ void get_options_page(unsigned int start, unsigned int len) {
   page += F("</div>");
   page += F("<small class='form-text text-muted'>");
   page += F("Connect to a wifi network using SSID and password.<br>");
-  page += F("Pedalino will be restarted if it is connected to a WiFi network and you change them.");
+  page += F("Pedal will be restarted if it is connected to a WiFi network and you change them.");
   page += F("</small>");
   page += F("</div>");
   page += F("</div>");
@@ -1991,7 +1991,7 @@ void get_options_page(unsigned int start, unsigned int len) {
   page += F("</div>");
   page += F("<small class='form-text text-muted'>");
   page += F("Access Point SSID and password.<br>");
-  page += F("Pedalino will be restarted if it is in AP mode and you change them.");
+  page += F("Pedal will be restarted if it is in AP mode and you change them.");
   page += F("</small>");
   page += F("</div>");
   page += F("</div>");
@@ -2023,7 +2023,7 @@ void get_options_page(unsigned int start, unsigned int len) {
   page += F("<label for='theme'>Theme</label>");
   page += F("</div>");
   page += F("<small id='bootstrapthemeHelpBlock' class='form-text text-muted'>");
-  page += F("Changing default theme require internet connection because themes are served via a CDN network. Only 'bootstrap' theme has been stored into Pedalino flash memory.");
+  page += F("Changing default theme require internet connection because themes are served via a CDN network. Only 'darkly' theme has been stored into Pedal flash memory.");
   page += F("</small>");
   page += F("</div>");
   page += F("</div>");
@@ -2566,7 +2566,7 @@ void get_update_page(unsigned int start, unsigned int len) {
   page += F("</div></b></div>");
   page += F("<div class='col-4'>");
   page += F("Latest public version: <b>");
-  page += F("<div id='latestFirmwareVersion' w3-include-html='https://raw.githubusercontent.com/alf45tar/PedalinoMini/master/firmware/");
+  page += F("<div id='latestFirmwareVersion' w3-include-html='https://raw.githubusercontent.com/sthopeless/PedalinoMini/master/firmware/");
   page += xstr(PLATFORMIO_ENV);
   page += F("/version.txt?");
   page += String(rand() % (999999 - 100000 + 1) + 100000);
@@ -2820,7 +2820,7 @@ void get_update_page(unsigned int start, unsigned int len) {
   page += F("<!doctype html>");
   page += F("<html lang='en'>");
   page += F("<head>");
-  page += F("<title>PedalinoMini&trade;</title>");
+  page += F("<title>Pedal</title>");
   page += F("</head>");
   page += F("<body>");
   page += F("<form method='POST' action='/update' enctype='multipart/form-data'><input type='file' name='update'><input type='submit' value='Update'></form>");
