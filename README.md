@@ -3,7 +3,8 @@
 # PedalinoMini™
 
 ![PlatformIO CI](https://github.com/alf45tar/PedalinoMini/workflows/PlatformIO%20CI/badge.svg)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d4984af61f064adbb3a7f3c65d20fddd)](https://www.codacy.com/gh/Sthopeless/PedalinoMini/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sthopeless/PedalinoMini&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d4984af61f064adbb3a7f3c65d20fddd)](https://www.codacy.com/gh/Sthopeless/PedalinoMini/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sthopeless/PedalinoMini&amp;utm_campaign=Badge_Grade)  
+  
 Wireless MIDI foot controller for guitarists and more.
 
 You can change the presets of your guitar rig, turn old MIDI equipment into something that’s USB-compatible, give you hands-free or foot-occupied ways to control your rig during a live performance, and it can be done with WiFi or Bluetooth. This is a full-featured MIDI controller, with three user profiles, and it can control a maximum of 36 foot switches. That’s an impressive amount of kit for such a small device; usually you’d have to spend hundreds or even thousands of dollars for a simple MIDI controller, and the PedalinoMini does everything with very cheap hardware.
